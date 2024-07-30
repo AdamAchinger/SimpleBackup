@@ -1,0 +1,17 @@
+{
+    "backupPlans": [
+      {
+        "id": 0,
+        "name": "PixelProcesor",
+        "sourceDir": "S:\\GitHub\\PixelProcesor",
+        "targetDir1": "I:\\SimpleBackup\\GitHub\\PixelProcesor",
+        "targetDir2": "F:\\SimpleBackup\\GitHub\\PixelProcesor",
+        "targetDir3": ""            
+      },
+      {
+        "id": 1,
+        "name": "SimpleBackup",
+        "sourceDir": "S:\\GitHub\\SimpleBackup"
+      }
+    ]
+  }
