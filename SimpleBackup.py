@@ -42,7 +42,17 @@ MasterLogButton.pack(side=LEFT,padx=4,pady=4)
 frameMiddle = ctk.CTkScrollableFrame(root,bg_color="orange",height=32)
 frameMiddle.pack(expand=TRUE,fill=BOTH,pady=4)
 
-for x in range(1):
+### JSON ###
+
+with open("config.json") as config: 
+    data = json.loads(config.read())
+
+backupsCount = len(data)
+
+for plan_name, plan_details in data.items():
+
+    targetDirCount = len(plan_details["targetDir"])
+
     frameBackup = ctk.CTkFrame(frameMiddle,bg_color="red",fg_color="blue",height=256)
     frameBackup.pack(fill=X,padx=4,pady=4)
 
@@ -56,7 +66,7 @@ for x in range(1):
     frameBackupSourceBottom.pack(expand=TRUE,fill=X,padx=4,pady=4)
 
     ### Top ###
-    SourceNameLable = ctk.CTkLabel(frameBackupSourceTop,text="SimpleBackup",font=("ROBOTO",32))
+    SourceNameLable = ctk.CTkLabel(frameBackupSourceTop,text=plan_name,font=("ROBOTO",32))
     SourceNameLable.pack(padx=16,pady=4)
 
     ### Bottom ### 
@@ -71,7 +81,7 @@ for x in range(1):
     frameBackupTarget = ctk.CTkFrame(frameBackup,bg_color="green",height=64)
     frameBackupTarget.pack(expand=TRUE,fill=X,padx=4,pady=4)
 
-    for x in range(3):
+    for x in range(targetDirCount):
             ### Frame ###
             frameTarget = ctk.CTkFrame(frameBackupTarget,bg_color="red",height=32)
             frameTarget.pack(expand=TRUE,fill=X,padx=2,pady=2)

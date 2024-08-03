@@ -1,21 +1,17 @@
 {
-    "backupPlans": [
-      {
-        "id": 1,
-        "name": "PixelProcesor",
-        "sourceDir": "S:\\GitHub\\PixelProcesor",
-        "targetDir": [
-        "I:\\SimpleBackup\\GitHub\\PixelProcesor",
-        "F:\\SimpleBackup\\GitHub\\PixelProcesor"
+  "PixelProcesor": {
+      "id": 1,
+      "sourceDir": "S:\\GitHub\\PixelProcesor",
+      "targetDir": [
+          "I:\\SimpleBackup\\GitHub\\PixelProcesor",
+          "F:\\SimpleBackup\\GitHub\\PixelProcesor"
       ]
-      },
-      {
-        "id": 2,
-        "name": "SimpleBackup",
-        "targetDir": [
-          "I:\\SimpleBackup\\GitHub\\SimpleBackup",
-          "F:\\SimpleBackup\\GitHub\\SimpleBackup"
-        ]
-      }
-    ]
+  },
+  "SimpleBackup": {
+      "id": 2,
+      "sourceDir": "S:\\GitHub\\SimpleBackup",
+      "targetDir": [
+          "I:\\SimpleBackup\\GitHub\\SimpleBackup"
+      ]
   }
+}
