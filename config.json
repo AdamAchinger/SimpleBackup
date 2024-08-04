@@ -1,17 +1,27 @@
 {
-  "PixelProcesor": {
+    "SimpleBackup": {
+      "id": 0,
+      "sourceDir": "S:\\GitHub\\SimpleBackup",
+      "targetDir": [
+        {
+          "name": "External F SB",
+          "path": "F:\\SimpleBackup\\GitHub\\SimpleBackup"
+        }
+      ]
+    },
+    "PixelProcesor": {
       "id": 1,
       "sourceDir": "S:\\GitHub\\PixelProcesor",
       "targetDir": [
-          "I:\\SimpleBackup\\GitHub\\PixelProcesor",
-          "F:\\SimpleBackup\\GitHub\\PixelProcesor"
+        {
+          "name": "External F PP",
+          "path": "F:\\SimpleBackup\\GitHub\\PixelProcesor"
+        },
+        {
+          "name": "External I PP",
+          "path": "I:\\SimpleBackup\\GitHub\\PixelProcesor"
+        }
       ]
-  },
-  "SimpleBackup": {
-      "id": 2,
-      "sourceDir": "S:\\GitHub\\SimpleBackup",
-      "targetDir": [
-          "I:\\SimpleBackup\\GitHub\\SimpleBackup"
-      ]
+    }
   }
-}
+  

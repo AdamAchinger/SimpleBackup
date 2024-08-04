@@ -4,5 +4,6 @@ with open("config.json") as config:
     data = json.loads(config.read())
 
 for plan_name, plan_details in data.items():
-    target_dir_count = len(plan_details["targetDir"])
     print(plan_name)
+    print(plan_details["targetDir"][0]["name"])
+    print(plan_details["id"])

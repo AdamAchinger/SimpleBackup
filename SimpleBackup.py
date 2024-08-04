@@ -6,7 +6,7 @@ import os
 root = ctk.CTk()
 
 ### Version ###
-toolVersion = 4.1
+toolVersion = 4.3
 
 root.title("Simple Backup"+" v"+str(toolVersion))
 root.iconbitmap('S:\GitHub\SimpleBackup\img\AA_icon.ico')
@@ -29,7 +29,7 @@ root.geometry(f'{appWidth}x{appHeight}+{appXpos}+{appYpos}')
 fSize = 11
 
 ### TOP ###
-frameTop = ctk.CTkFrame(root,bg_color="blue",height=64)
+frameTop = ctk.CTkFrame(root,height=64)
 frameTop.pack(fill=X)
 
 ConfigButton = ctk.CTkButton(frameTop,text="Open Config",font=("ROBOTO",16),height=32)
@@ -39,7 +39,7 @@ MasterLogButton = ctk.CTkButton(frameTop,text="Open Log",font=("ROBOTO",16),heig
 MasterLogButton.pack(side=LEFT,padx=4,pady=4)
 
 
-frameMiddle = ctk.CTkScrollableFrame(root,bg_color="orange",height=32)
+frameMiddle = ctk.CTkScrollableFrame(root,height=32)
 frameMiddle.pack(expand=TRUE,fill=BOTH,pady=4)
 
 ### JSON ###
@@ -53,16 +53,16 @@ for plan_name, plan_details in data.items():
 
     targetDirCount = len(plan_details["targetDir"])
 
-    frameBackup = ctk.CTkFrame(frameMiddle,bg_color="red",fg_color="blue",height=256)
-    frameBackup.pack(fill=X,padx=4,pady=4)
+    frameBackup = ctk.CTkFrame(frameMiddle,fg_color="white",height=256)
+    frameBackup.pack(fill=X,padx=4,pady=6)
 
-    frameBackup1 = ctk.CTkFrame(frameBackup,bg_color="yellow",height=256)
-    frameBackup1.pack(fill=X,padx=4,pady=4)
+    frameBackup1 = ctk.CTkFrame(frameBackup,height=256)
+    frameBackup1.pack(fill=X,padx=4,pady=2)
 
-    frameBackupSourceTop = ctk.CTkFrame(frameBackup1,bg_color="blue",height=64)
+    frameBackupSourceTop = ctk.CTkFrame(frameBackup1,height=64)
     frameBackupSourceTop.pack(expand=TRUE,fill=X,padx=4,pady=4)
 
-    frameBackupSourceBottom = ctk.CTkFrame(frameBackup1,bg_color="blue",height=64)
+    frameBackupSourceBottom = ctk.CTkFrame(frameBackup1,height=64)
     frameBackupSourceBottom.pack(expand=TRUE,fill=X,padx=4,pady=4)
 
     ### Top ###
@@ -71,49 +71,51 @@ for plan_name, plan_details in data.items():
 
     ### Bottom ### 
 
-    SourcePathLable = ctk.CTkLabel(frameBackupSourceBottom,text="S:/GitHub/SimpleBackup",font=("ROBOTO",16))
+    SourcePathLable = ctk.CTkLabel(frameBackupSourceBottom,text=plan_details["sourceDir"],font=("ROBOTO",16))
     SourcePathLable.pack(side=LEFT,padx=8)
 
     OpenSourceButton = ctk.CTkButton(frameBackupSourceBottom,text="Open Source",font=("ROBOTO",16),height=24,width=24)
     OpenSourceButton.pack(side=RIGHT,padx=4,pady=4)
 
     ### Multi Frame ### 
-    frameBackupTarget = ctk.CTkFrame(frameBackup,bg_color="green",height=64)
-    frameBackupTarget.pack(expand=TRUE,fill=X,padx=4,pady=4)
-
+    frameBackupTarget = ctk.CTkFrame(frameBackup,height=64)
+    frameBackupTarget.pack(expand=TRUE,fill=X,padx=4,pady=2)
+    i = 0 
     for x in range(targetDirCount):
-            ### Frame ###
-            frameTarget = ctk.CTkFrame(frameBackupTarget,bg_color="red",height=32)
-            frameTarget.pack(expand=TRUE,fill=X,padx=2,pady=2)
+
+        ### Frame ###
+        frameTarget = ctk.CTkFrame(frameBackupTarget,height=32)
+        frameTarget.pack(expand=TRUE,fill=X,padx=2,pady=2)
 
 
-            ### Top ###
-            frameTargetTop = ctk.CTkFrame(frameTarget,bg_color="red",height=32)
-            frameTargetTop.pack(expand=TRUE,fill=X,padx=2,pady=2)    
+        ### Top ###
+        frameTargetTop = ctk.CTkFrame(frameTarget,height=32)
+        frameTargetTop.pack(expand=TRUE,fill=X,padx=2,pady=2)    
 
-            TargetNameLable = ctk.CTkLabel(frameTargetTop,text="Externl F:",font=("ROBOTO",16))
-            TargetNameLable.pack(side=LEFT,padx=16) 
+        TargetNameLable = ctk.CTkLabel(frameTargetTop,text=plan_details["targetDir"][i]["name"],font=("ROBOTO",16))
+        TargetNameLable.pack(side=LEFT,padx=16) 
 
-            TargetUpdateDateLable = ctk.CTkLabel(frameTargetTop,text="03.08.2024",font=("ROBOTO",16))
-            TargetUpdateDateLable.pack(side=LEFT,padx=16) 
+        TargetUpdateDateLable = ctk.CTkLabel(frameTargetTop,text="03.08.2024",font=("ROBOTO",16))
+        TargetUpdateDateLable.pack(side=LEFT,padx=16) 
 
-            RestoreButton = ctk.CTkButton(frameTargetTop,text="Restore",font=("ROBOTO",16),height=24,width=24)
-            RestoreButton.pack(side=RIGHT,padx=4,pady=4)
+        RestoreButton = ctk.CTkButton(frameTargetTop,text="Restore",font=("ROBOTO",16),height=24,width=24)
+        RestoreButton.pack(side=RIGHT,padx=4,pady=4)
 
-            BackupButton = ctk.CTkButton(frameTargetTop,text="Backup",font=("ROBOTO",16),height=24,width=24)
-            BackupButton.pack(side=RIGHT,padx=4,pady=4)
+        BackupButton = ctk.CTkButton(frameTargetTop,text="Backup",font=("ROBOTO",16),height=24,width=24)
+        BackupButton.pack(side=RIGHT,padx=4,pady=4)
 
-            ### Bottom ### 
+        ### Bottom ### 
 
-            frameTargetBottom = ctk.CTkFrame(frameTarget,bg_color="red",height=32)
-            frameTargetBottom.pack(expand=TRUE,fill=X,padx=2,pady=2)        
+        frameTargetBottom = ctk.CTkFrame(frameTarget,height=32)
+        frameTargetBottom.pack(expand=TRUE,fill=X,padx=2,pady=2)        
 
-            TargetLable = ctk.CTkLabel(frameTargetBottom,text="F:/SimpleBackupTarget/SimpleBackup",font=("ROBOTO",16))
-            TargetLable.pack(side=LEFT,padx=8)
+        TargetLable = ctk.CTkLabel(frameTargetBottom,text=plan_details["targetDir"][i]["path"],font=("ROBOTO",16))
+        TargetLable.pack(side=LEFT,padx=8)
 
-            OpenTargetButton = ctk.CTkButton(frameTargetBottom,text="Open Target",font=("ROBOTO",16),height=16,width=24)
-            OpenTargetButton.pack(side=RIGHT,padx=4,pady=4)
+        OpenTargetButton = ctk.CTkButton(frameTargetBottom,text="Open Target",font=("ROBOTO",16),height=16,width=24)
+        OpenTargetButton.pack(side=RIGHT,padx=4,pady=4)
 
+        i += 1 
 
 
 
