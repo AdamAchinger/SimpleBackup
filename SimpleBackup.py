@@ -2,6 +2,8 @@ from tkinter import *
 import customtkinter as ctk
 import json
 import os
+import sys
+import subprocess
 
 root = ctk.CTk()
 
@@ -27,20 +29,32 @@ root.geometry(f'{appWidth}x{appHeight}+{appXpos}+{appYpos}')
 ##### 
 
 fSize = 11
-
+################################################################
 ### TOP ###
 frameTop = ctk.CTkFrame(root,height=64)
 frameTop.pack(fill=X)
 
-ConfigButton = ctk.CTkButton(frameTop,text="Open Config",font=("ROBOTO",16),height=32)
+def openConfig():
+    os.system("notepad.exe "+"config.json")
+def openLog():
+    os.system("notepad.exe "+"log.txt")
+def refresh():
+    python = sys.executable
+    os.execl(python, python, * sys.argv)
+
+
+ConfigButton = ctk.CTkButton(frameTop,text="Open Config",command=openConfig,font=("ROBOTO",16),height=32)
 ConfigButton.pack(side=LEFT,padx=4,pady=4)
 
-MasterLogButton = ctk.CTkButton(frameTop,text="Open Log",font=("ROBOTO",16),height=32)
-MasterLogButton.pack(side=LEFT,padx=4,pady=4)
+LogButton = ctk.CTkButton(frameTop,text="Open Log",command=openLog,font=("ROBOTO",16),height=32)
+LogButton.pack(side=LEFT,padx=4,pady=4)
 
+RefreshButton = ctk.CTkButton(frameTop,text="Refresh",command=refresh,font=("ROBOTO",16),height=32)
+RefreshButton.pack(side=LEFT,padx=4,pady=4)
 
 frameMiddle = ctk.CTkScrollableFrame(root,height=32)
 frameMiddle.pack(expand=TRUE,fill=BOTH,pady=4)
+
 
 ### JSON ###
 
@@ -48,13 +62,13 @@ with open("config.json") as config:
     data = json.loads(config.read())
 
 backupsCount = len(data)
-
+i = 0 
 for plan_name, plan_details in data.items():
 
     targetDirCount = len(plan_details["targetDir"])
 
-    frameBackup = ctk.CTkFrame(frameMiddle,fg_color="white",height=256)
-    frameBackup.pack(fill=X,padx=4,pady=6)
+    frameBackup = ctk.CTkFrame(frameMiddle,fg_color="#555555",height=256)
+    frameBackup.pack(fill=X,padx=2,pady=6)
 
     frameBackup1 = ctk.CTkFrame(frameBackup,height=256)
     frameBackup1.pack(fill=X,padx=4,pady=2)
@@ -74,13 +88,16 @@ for plan_name, plan_details in data.items():
     SourcePathLable = ctk.CTkLabel(frameBackupSourceBottom,text=plan_details["sourceDir"],font=("ROBOTO",16))
     SourcePathLable.pack(side=LEFT,padx=8)
 
+
     OpenSourceButton = ctk.CTkButton(frameBackupSourceBottom,text="Open Source",font=("ROBOTO",16),height=24,width=24)
     OpenSourceButton.pack(side=RIGHT,padx=4,pady=4)
 
     ### Multi Frame ### 
     frameBackupTarget = ctk.CTkFrame(frameBackup,height=64)
     frameBackupTarget.pack(expand=TRUE,fill=X,padx=4,pady=2)
-    i = 0 
+    i += 1 
+
+    ii = 0 
     for x in range(targetDirCount):
 
         ### Frame ###
@@ -92,11 +109,11 @@ for plan_name, plan_details in data.items():
         frameTargetTop = ctk.CTkFrame(frameTarget,height=32)
         frameTargetTop.pack(expand=TRUE,fill=X,padx=2,pady=2)    
 
-        TargetNameLable = ctk.CTkLabel(frameTargetTop,text=plan_details["targetDir"][i]["name"],font=("ROBOTO",16))
-        TargetNameLable.pack(side=LEFT,padx=16) 
+        TargetNameLable = ctk.CTkLabel(frameTargetTop,text=plan_details["targetDir"][ii]["name"],font=("ROBOTO",16))
+        TargetNameLable.pack(side=LEFT,padx=8) 
 
         TargetUpdateDateLable = ctk.CTkLabel(frameTargetTop,text="03.08.2024",font=("ROBOTO",16))
-        TargetUpdateDateLable.pack(side=LEFT,padx=16) 
+        TargetUpdateDateLable.pack(side=LEFT,padx=8) 
 
         RestoreButton = ctk.CTkButton(frameTargetTop,text="Restore",font=("ROBOTO",16),height=24,width=24)
         RestoreButton.pack(side=RIGHT,padx=4,pady=4)
@@ -109,30 +126,13 @@ for plan_name, plan_details in data.items():
         frameTargetBottom = ctk.CTkFrame(frameTarget,height=32)
         frameTargetBottom.pack(expand=TRUE,fill=X,padx=2,pady=2)        
 
-        TargetLable = ctk.CTkLabel(frameTargetBottom,text=plan_details["targetDir"][i]["path"],font=("ROBOTO",16))
+        TargetLable = ctk.CTkLabel(frameTargetBottom,text=plan_details["targetDir"][ii]["path"],font=("ROBOTO",16))
         TargetLable.pack(side=LEFT,padx=8)
 
-        OpenTargetButton = ctk.CTkButton(frameTargetBottom,text="Open Target",font=("ROBOTO",16),height=16,width=24)
+        OpenTargetButton = ctk.CTkButton(frameTargetBottom,text="Open Target",font=("ROBOTO",16),height=16,width=24)    
         OpenTargetButton.pack(side=RIGHT,padx=4,pady=4)
 
-        i += 1 
-
-
-
-
-    '''
-    BackupButton = ctk.CTkButton(frameBackup,text="Backup",font=("ROBOTO",16),height=32,width=24)
-    BackupButton.pack(side=LEFT,padx=4,pady=4)
-
-    RestoreButton = ctk.CTkButton(frameBackup,text="Restore",font=("ROBOTO",16),height=32,width=24)
-    RestoreButton.pack(side=LEFT,padx=4,pady=4)
-
-    OpenSourceButton = ctk.CTkButton(frameBackup,text="Open Source",font=("ROBOTO",16),height=32,width=24)
-    OpenSourceButton.pack(side=LEFT,padx=4,pady=4)
-
-    OpenTargetButton = ctk.CTkButton(frameBackup,text="Open Target",font=("ROBOTO",16),height=32,width=24)
-    OpenTargetButton.pack(side=LEFT,padx=4,pady=4)
-    '''
+        ii += 1 
 
 
 
