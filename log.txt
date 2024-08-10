@@ -1,3 +1,18 @@
 10.08.2024 02:55:47 | Button | Open Config 
 10.08.2024 02:55:53 | Button | Open Log 
 10.08.2024 02:55:56 | Button | Refresh 
+10.08.2024 02:56:51 | Button | Refresh 
+10.08.2024 02:56:56 | Button | Open Config 
+10.08.2024 02:58:22 | START 
+10.08.2024 02:58:48 | APP | START 
+10.08.2024 02:58:55 | Button | Open Log 
+10.08.2024 02:59:29 | APP | START 
+10.08.2024 03:02:00 | APP | START 
+10.08.2024 03:02:09 | Button | Open Source -P:\MasterAccount 
+10.08.2024 03:07:09 | APP | START 
+10.08.2024 03:07:12 | Button | Refresh 
+10.08.2024 03:07:12 | APP | START 
+10.08.2024 03:07:17 | Button | Refresh 
+10.08.2024 03:07:18 | APP | START 
+10.08.2024 03:07:34 | Button | Open Config 
+10.08.2024 03:07:38 | Button | Open Log 

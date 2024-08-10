@@ -29,28 +29,30 @@ root.geometry(f'{appWidth}x{appHeight}+{appXpos}+{appYpos}')
 ##### 
 
 fSize = 11
-################################################################
-### TOP ###
-frameTop = ctk.CTkFrame(root,height=64)
-frameTop.pack(fill=X)
 
 def refresh():
     python = sys.executable
     os.execl(python, python, * sys.argv)
+    
 def openConfig():
     os.system("notepad.exe "+"config.json")
+
 def openLog():
     os.system("notepad.exe "+"log.txt")
 
-    
 def logIt(command):
     with open("log.txt","a") as logFile:
         from datetime import datetime
         now = datetime.now()
         formatted_date = now.strftime('%d.%m.%Y %H:%M:%S')
         logFile.writelines(f"{formatted_date} | {command} \n")
-
     logFile.close()
+
+logIt("APP | START")
+################################################################
+### TOP ###
+frameTop = ctk.CTkFrame(root,height=64)
+frameTop.pack(fill=X)
 
 RefreshButton = ctk.CTkButton(frameTop,text="Refresh",command=lambda:[ logIt("Button | Refresh"), refresh() ],font=("ROBOTO",16),height=32,width=128)
 RefreshButton.pack(side=LEFT,padx=4,pady=4)
