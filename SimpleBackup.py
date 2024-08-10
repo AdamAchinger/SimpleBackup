@@ -29,7 +29,7 @@ root.geometry(f'{appWidth}x{appHeight}+{appXpos}+{appYpos}')
 ##### 
 
 fSize = 11
-
+### Functions ###
 def refresh():
     python = sys.executable
     os.execl(python, python, * sys.argv)
@@ -47,9 +47,14 @@ def logIt(command):
         formatted_date = now.strftime('%d.%m.%Y %H:%M:%S')
         logFile.writelines(f"{formatted_date} | {command} \n")
     logFile.close()
+### Start Log ###
+with open("log.txt","a") as logFile:
+    logFile.writelines(f"######################################################\n")
+logFile.close()
 
 logIt("APP | START")
 ################################################################
+
 ### TOP ###
 frameTop = ctk.CTkFrame(root,height=64)
 frameTop.pack(fill=X)
@@ -73,6 +78,7 @@ frameMiddle.pack(expand=TRUE,fill=BOTH,pady=4)
 
 with open("config.json") as config: 
     data = json.loads(config.read())
+
 
 backupsCount = len(data)
 i = 0 
