@@ -34,23 +34,34 @@ fSize = 11
 frameTop = ctk.CTkFrame(root,height=64)
 frameTop.pack(fill=X)
 
+def refresh():
+    python = sys.executable
+    os.execl(python, python, * sys.argv)
 def openConfig():
     os.system("notepad.exe "+"config.json")
 def openLog():
     os.system("notepad.exe "+"log.txt")
-def refresh():
-    python = sys.executable
-    os.execl(python, python, * sys.argv)
 
+    
+def logIt(command):
+    with open("log.txt","a") as logFile:
+        from datetime import datetime
+        now = datetime.now()
+        formatted_date = now.strftime('%d.%m.%Y %H:%M:%S')
+        logFile.writelines(f"{formatted_date} | {command} \n")
 
-ConfigButton = ctk.CTkButton(frameTop,text="Open Config",command=openConfig,font=("ROBOTO",16),height=32)
+    logFile.close()
+
+RefreshButton = ctk.CTkButton(frameTop,text="Refresh",command=lambda:[ logIt("Button | Refresh"), refresh() ],font=("ROBOTO",16),height=32,width=128)
+RefreshButton.pack(side=LEFT,padx=4,pady=4)
+
+ConfigButton = ctk.CTkButton(frameTop,text="Open Config",command=lambda:[ logIt("Button | Open Config"), openConfig() ],font=("ROBOTO",16),height=32,width=128)
 ConfigButton.pack(side=LEFT,padx=4,pady=4)
 
-LogButton = ctk.CTkButton(frameTop,text="Open Log",command=openLog,font=("ROBOTO",16),height=32)
+LogButton = ctk.CTkButton(frameTop,text="Open Log",command=lambda:[ logIt("Button | Open Log"), openLog() ],font=("ROBOTO",16),height=32,width=128)
 LogButton.pack(side=LEFT,padx=4,pady=4)
 
-RefreshButton = ctk.CTkButton(frameTop,text="Refresh",command=refresh,font=("ROBOTO",16),height=32)
-RefreshButton.pack(side=LEFT,padx=4,pady=4)
+
 
 frameMiddle = ctk.CTkScrollableFrame(root,height=32)
 frameMiddle.pack(expand=TRUE,fill=BOTH,pady=4)
@@ -85,8 +96,12 @@ for plan_name, plan_details in data.items():
 
     ### Bottom ### 
 
+    ### Ready Target ###
+    SourceReadyFrame = ctk.CTkFrame(frameBackupSourceBottom,height=12,width=12,fg_color="red",corner_radius=100)
+    SourceReadyFrame.pack(side=LEFT,padx=8) 
+
     SourcePathLable = ctk.CTkLabel(frameBackupSourceBottom,text=plan_details["sourceDir"],font=("ROBOTO",16))
-    SourcePathLable.pack(side=LEFT,padx=8)
+    SourcePathLable.pack(side=LEFT,padx=2)
 
 
     OpenSourceButton = ctk.CTkButton(frameBackupSourceBottom,text="Open Source",font=("ROBOTO",16),height=24,width=24)
@@ -94,23 +109,27 @@ for plan_name, plan_details in data.items():
 
     ### Multi Frame ### 
     frameBackupTarget = ctk.CTkFrame(frameBackup,height=64)
-    frameBackupTarget.pack(expand=TRUE,fill=X,padx=4,pady=2)
+    frameBackupTarget.pack(expand=TRUE,fill=X,padx=4,pady=4)
     i += 1 
 
-    ii = 0 
+    ii = 0
     for x in range(targetDirCount):
 
         ### Frame ###
         frameTarget = ctk.CTkFrame(frameBackupTarget,height=32)
-        frameTarget.pack(expand=TRUE,fill=X,padx=2,pady=2)
+        frameTarget.pack(expand=TRUE,fill=X,padx=2,pady=4)
 
 
         ### Top ###
         frameTargetTop = ctk.CTkFrame(frameTarget,height=32)
-        frameTargetTop.pack(expand=TRUE,fill=X,padx=2,pady=2)    
+        frameTargetTop.pack(expand=TRUE,fill=X,padx=2,pady=2)
+        
+        ### Ready Target ###
+        TargetReadyFrame = ctk.CTkFrame(frameTargetTop,height=12,width=12,fg_color="red",corner_radius=100)
+        TargetReadyFrame.pack(side=LEFT,padx=8) 
 
         TargetNameLable = ctk.CTkLabel(frameTargetTop,text=plan_details["targetDir"][ii]["name"],font=("ROBOTO",16))
-        TargetNameLable.pack(side=LEFT,padx=8) 
+        TargetNameLable.pack(side=LEFT,padx=2) 
 
         TargetUpdateDateLable = ctk.CTkLabel(frameTargetTop,text="03.08.2024",font=("ROBOTO",16))
         TargetUpdateDateLable.pack(side=LEFT,padx=8) 
@@ -125,8 +144,10 @@ for plan_name, plan_details in data.items():
 
         frameTargetBottom = ctk.CTkFrame(frameTarget,height=32)
         frameTargetBottom.pack(expand=TRUE,fill=X,padx=2,pady=2)        
-
-        TargetLable = ctk.CTkLabel(frameTargetBottom,text=plan_details["targetDir"][ii]["path"],font=("ROBOTO",16))
+        
+        targetDir1 = plan_details["targetDir"][ii]["path"]
+        
+        TargetLable = ctk.CTkLabel(frameTargetBottom,text=targetDir1,font=("ROBOTO",16))
         TargetLable.pack(side=LEFT,padx=8)
 
         OpenTargetButton = ctk.CTkButton(frameTargetBottom,text="Open Target",font=("ROBOTO",16),height=16,width=24)    

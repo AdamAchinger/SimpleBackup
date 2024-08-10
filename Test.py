@@ -1,7 +1,13 @@
-import json
 
-with open("config.json") as config: 
-    data = json.loads(config.read())
 
-for plan_name, plan_details in data.items():
-    print(plan_details["sourceDir"])
+def logIt(function):
+    with open("log.txt","a") as logFile:
+        from datetime import datetime
+        now = datetime.now()
+        formatted_date = now.strftime('%d.%m.%Y %H:%M:%S')
+        logFile.writelines(f"{formatted_date} | {function} \n")
+
+    logFile.close()
+
+
+logIt("[ SimpleBackup -> External F]")

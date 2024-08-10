@@ -4,7 +4,7 @@
       "sourceDir": "S:\\GitHub\\SimpleBackup",
       "targetDir": [
         {
-          "name": "External F SB",
+          "name": "External F",
           "path": "F:\\SimpleBackup\\GitHub\\SimpleBackup"
         }
       ]
@@ -14,12 +14,34 @@
       "sourceDir": "S:\\GitHub\\PixelProcesor",
       "targetDir": [
         {
-          "name": "External F PP",
+          "name": "External F",
           "path": "F:\\SimpleBackup\\GitHub\\PixelProcesor"
         },
         {
-          "name": "External I PP",
+          "name": "External I",
           "path": "I:\\SimpleBackup\\GitHub\\PixelProcesor"
+        }
+      ]
+    },
+    "MasterAccount": {
+      "id": 2,
+      "sourceDir": "P:\\MasterAccount",
+      "targetDir": [
+        {
+          "name": "Pendrive L",
+          "path": "L:\\MasterAccount"
+        },
+        {
+          "name": "Pendrive N",
+          "path": "N:\\MasterAccount_Backup\\MasterAccount"
+        },
+        {
+          "name": "External F",
+          "path": "F:\\MasterAccount_Backup\\MasterAccount"
+        },
+        {
+          "name": "External I",
+          "path": "I:\\MasterAccount_Backup\\MasterAccount"
         }
       ]
     }
