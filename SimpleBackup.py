@@ -40,6 +40,9 @@ def openConfig():
 def openLog():
     os.system("notepad.exe "+"log.txt")
 
+def openDirectory(Path):
+    os.startfile(Path)
+
 def logIt(command):
     with open("log.txt","a") as logFile:
         from datetime import datetime
@@ -81,10 +84,9 @@ with open("config.json") as config:
 
 
 backupsCount = len(data)
-i = 0 
-for plan_name, plan_details in data.items():
+for plan_name, pd in data.items():
 
-    targetDirCount = len(plan_details["targetDir"])
+    targetDirCount = len(pd["targetDir"])
 
     frameBackup = ctk.CTkFrame(frameMiddle,fg_color="#555555",height=256)
     frameBackup.pack(fill=X,padx=2,pady=6)
@@ -103,40 +105,53 @@ for plan_name, plan_details in data.items():
     SourceNameLable.pack(padx=16,pady=4)
 
     ### Bottom ### 
-
+    pd = pd
     ### Ready Target ###
-    SourceReadyFrame = ctk.CTkFrame(frameBackupSourceBottom,height=12,width=12,fg_color="red",corner_radius=100)
+    ExistDir = os.path.exists(pd["sourceDir"])
+    if(ExistDir == True):
+        readyColor = "green"
+    else:   
+        readyColor = "red"
+
+    SourceReadyFrame = ctk.CTkFrame(frameBackupSourceBottom,height=12,width=12,fg_color=readyColor,corner_radius=100)
     SourceReadyFrame.pack(side=LEFT,padx=8) 
 
-    SourcePathLable = ctk.CTkLabel(frameBackupSourceBottom,text=plan_details["sourceDir"],font=("ROBOTO",16))
+    SourcePathLable = ctk.CTkLabel(frameBackupSourceBottom,text=pd["sourceDir"],font=("ROBOTO",16))
     SourcePathLable.pack(side=LEFT,padx=2)
 
 
-    OpenSourceButton = ctk.CTkButton(frameBackupSourceBottom,text="Open Source",font=("ROBOTO",16),height=24,width=24)
+    OpenSourceButton = ctk.CTkButton(frameBackupSourceBottom,text="Open Source",command=lambda pd=pd :[ logIt(str("Button | Open Source > "+pd["sourceDir"])),openDirectory(pd["sourceDir"])],font=("ROBOTO",16),height=24,width=24)
     OpenSourceButton.pack(side=RIGHT,padx=4,pady=4)
 
     ### Multi Frame ### 
     frameBackupTarget = ctk.CTkFrame(frameBackup,height=64)
     frameBackupTarget.pack(expand=TRUE,fill=X,padx=4,pady=4)
-    i += 1 
+
 
     ii = 0
     for x in range(targetDirCount):
 
         ### Frame ###
         frameTarget = ctk.CTkFrame(frameBackupTarget,height=32)
-        frameTarget.pack(expand=TRUE,fill=X,padx=2,pady=4)
-
+        frameTarget.pack(expand=TRUE,fill=X,padx=2,pady=4)                     
 
         ### Top ###
         frameTargetTop = ctk.CTkFrame(frameTarget,height=32)
         frameTargetTop.pack(expand=TRUE,fill=X,padx=2,pady=2)
         
         ### Ready Target ###
-        TargetReadyFrame = ctk.CTkFrame(frameTargetTop,height=12,width=12,fg_color="red",corner_radius=100)
+        ExistDir1 = os.path.exists(str(pd["targetDir"][ii]["path"]))
+        if(ExistDir1 == True):
+            readyColor1 = "green"
+        else:   
+            readyColor1 = "red"
+
+        TargetReadyFrame = ctk.CTkFrame(frameTargetTop,height=12,width=12,fg_color=readyColor1,corner_radius=100)
         TargetReadyFrame.pack(side=LEFT,padx=8) 
 
-        TargetNameLable = ctk.CTkLabel(frameTargetTop,text=plan_details["targetDir"][ii]["name"],font=("ROBOTO",16))
+
+
+        TargetNameLable = ctk.CTkLabel(frameTargetTop,text=pd["targetDir"][ii]["name"],font=("ROBOTO",16))
         TargetNameLable.pack(side=LEFT,padx=2) 
 
         TargetUpdateDateLable = ctk.CTkLabel(frameTargetTop,text="03.08.2024",font=("ROBOTO",16))
@@ -153,7 +168,7 @@ for plan_name, plan_details in data.items():
         frameTargetBottom = ctk.CTkFrame(frameTarget,height=32)
         frameTargetBottom.pack(expand=TRUE,fill=X,padx=2,pady=2)        
         
-        targetDir1 = plan_details["targetDir"][ii]["path"]
+        targetDir1 = pd["targetDir"][ii]["path"]
         
         TargetLable = ctk.CTkLabel(frameTargetBottom,text=targetDir1,font=("ROBOTO",16))
         TargetLable.pack(side=LEFT,padx=8)

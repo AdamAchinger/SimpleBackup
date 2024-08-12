@@ -1,6 +1,18 @@
 {
+    "Test": {
+      "sourceDir": "S:\\sBackupSource\\Test",
+      "targetDir": [
+        {
+          "name": "Test E",
+          "path": "E:\\sBackupTarget\\Test"
+        },
+        {
+          "name": "Test S",
+          "path": "S:\\sBackupTarget\\Test"
+        }
+      ]
+    },
     "SimpleBackup": {
-      "id": 0,
       "sourceDir": "S:\\GitHub\\SimpleBackup",
       "targetDir": [
         {
@@ -10,7 +22,6 @@
       ]
     },
     "PixelProcesor": {
-      "id": 1,
       "sourceDir": "S:\\GitHub\\PixelProcesor",
       "targetDir": [
         {
@@ -20,11 +31,14 @@
         {
           "name": "External I",
           "path": "I:\\SimpleBackup\\GitHub\\PixelProcesor"
+        },
+        {
+          "name": "Testowa Lokalizacja",
+          "path": "E:\\SimpleBackup\\GitHub\\PixelProcesor"
         }
       ]
     },
     "MasterAccount": {
-      "id": 2,
       "sourceDir": "P:\\MasterAccount",
       "targetDir": [
         {
@@ -42,6 +56,10 @@
         {
           "name": "External I",
           "path": "I:\\MasterAccount_Backup\\MasterAccount"
+        },
+        {
+          "name": "Laptop VeraCrypt",
+          "path": "Z:\\Pass\\MasterAccounts"
         }
       ]
     }
