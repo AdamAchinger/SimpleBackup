@@ -1,9 +1,9 @@
 from tkinter import * 
 import customtkinter as ctk
+from datetime import datetime
 import json
 import os
 import sys
-import subprocess
 
 root = ctk.CTk()
 
@@ -36,39 +36,48 @@ def refresh():
     
 def openConfig():
     os.system("notepad.exe "+"config.json")
-
+    
 def openLog():
     os.system("notepad.exe "+"log.txt")
 
-def openDirectory(Path):
+def openDirectory(Path):  
     os.startfile(Path)
+
+### set endlog ###
+
+endlog = ctk.StringVar()
 
 def logIt(command):
     with open("log.txt","a") as logFile:
-        from datetime import datetime
         now = datetime.now()
         formatted_date = now.strftime('%d.%m.%Y %H:%M:%S')
         logFile.writelines(f"{formatted_date} | {command} \n")
     logFile.close()
+
+    endlog.set(command)
+
+
 ### Start Log ###
 with open("log.txt","a") as logFile:
     logFile.writelines(f"######################################################\n")
 logFile.close()
 
-logIt("APP | START")
+logIt("SimpleBackup  >  Start")
+
 ################################################################
 
 ### TOP ###
 frameTop = ctk.CTkFrame(root,height=64)
 frameTop.pack(fill=X)
 
-RefreshButton = ctk.CTkButton(frameTop,text="Refresh",command=lambda:[ logIt("Button | Refresh"), refresh() ],font=("ROBOTO",16),height=32,width=128)
+
+RefreshButton = ctk.CTkButton(frameTop,text="Refresh",command=lambda:[ logIt("Refresh"), refresh() ],font=("ROBOTO",16),height=32,width=128)
 RefreshButton.pack(side=LEFT,padx=4,pady=4)
 
-ConfigButton = ctk.CTkButton(frameTop,text="Open Config",command=lambda:[ logIt("Button | Open Config"), openConfig() ],font=("ROBOTO",16),height=32,width=128)
+ConfigButton = ctk.CTkButton(frameTop,text="Open Config",command=lambda:[ logIt("Open Config"+"  >  "+"config.json"), openConfig() ],font=("ROBOTO",16),height=32,width=128)
 ConfigButton.pack(side=LEFT,padx=4,pady=4)
 
-LogButton = ctk.CTkButton(frameTop,text="Open Log",command=lambda:[ logIt("Button | Open Log"), openLog() ],font=("ROBOTO",16),height=32,width=128)
+LogButton = ctk.CTkButton(frameTop,text="Open Log",command=lambda:[ logIt("Open Log >"+"  >  "+"log.txt"), openLog() ],font=("ROBOTO",16),height=32,width=128)
 LogButton.pack(side=LEFT,padx=4,pady=4)
 
 
@@ -79,9 +88,8 @@ frameMiddle.pack(expand=TRUE,fill=BOTH,pady=4)
 
 ### JSON ###
 
-with open("config.json") as config: 
+with open("config.json","r") as config: 
     data = json.loads(config.read())
-
 
 backupsCount = len(data)
 for plan_name, pd in data.items():
@@ -120,7 +128,7 @@ for plan_name, pd in data.items():
     SourcePathLable.pack(side=LEFT,padx=2)
 
 
-    OpenSourceButton = ctk.CTkButton(frameBackupSourceBottom,text="Open Source",command=lambda pd=pd :[ logIt(str("Button | Open Source > "+pd["sourceDir"])),openDirectory(pd["sourceDir"])],font=("ROBOTO",16),height=24,width=24)
+    OpenSourceButton = ctk.CTkButton(frameBackupSourceBottom,text="Open Source",command=lambda pd=pd :[ logIt(str("BUTTON | Open Source > "+pd["sourceDir"])),openDirectory(pd["sourceDir"])],font=("ROBOTO",16),height=24,width=24)
     OpenSourceButton.pack(side=RIGHT,padx=4,pady=4)
 
     ### Multi Frame ### 
@@ -164,7 +172,6 @@ for plan_name, pd in data.items():
         BackupButton.pack(side=RIGHT,padx=4,pady=4)
 
         ### Bottom ### 
-
         frameTargetBottom = ctk.CTkFrame(frameTarget,height=32)
         frameTargetBottom.pack(expand=TRUE,fill=X,padx=2,pady=2)        
         
@@ -180,11 +187,12 @@ for plan_name, pd in data.items():
 
 
 
-frameBottom = ctk.CTkFrame(root,bg_color="white",height=32)
+frameBottom = ctk.CTkFrame(root,height=32)
 frameBottom.pack(fill=X)
 
-logLable = ctk.CTkLabel(frameBottom,text="[ S:/SimpleBackup -> F:/SimpleBackup ] [Complited] ")
-logLable.pack(side=LEFT,padx=4)
+
+logLable = ctk.CTkLabel(frameBottom,textvariable=endlog,font=("ROBOTO",16))
+logLable.pack(side=LEFT,padx=16)
 
 root.mainloop()
 
