@@ -9,3 +9,4 @@ def count_folders(path):
 y = f"e:\sBackupTarget\Test_Target"
 
 print("Number of folders:", count_folders(y))
+sasas
