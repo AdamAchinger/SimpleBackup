@@ -377,3 +377,112 @@
 14.08.2024 23:35:50 | BUTTON | Backup > to E:\sBackupTarget\Test_Target 
 14.08.2024 23:35:50 | BUTTON | Backup > to E:\sBackupTarget\Test_Target 
 14.08.2024 23:35:52 | BUTTON | Backup > to S:\sBackupTarget\Test_Target 
+######################################################
+14.08.2024 23:46:11 | SimpleBackup  >  Start 
+14.08.2024 23:46:16 | BUTTON | Backup > to E:\sBackupTarget\Test_Target 
+######################################################
+14.08.2024 23:46:58 | SimpleBackup  >  Start 
+14.08.2024 23:47:03 | BUTTON | Backup > to S:\sBackupTarget\Test_Target 
+14.08.2024 23:47:08 | BUTTON | Backup > to E:\sBackupTarget\Test_Target 
+14.08.2024 23:47:15 | BUTTON | Backup > to E:\sBackupTarget\Test_Target 
+14.08.2024 23:47:55 | BUTTON | Open Source > S:\sBackupSource\Test_Source 
+14.08.2024 23:47:59 | BUTTON | Open Target > E:\sBackupTarget\Test_Target 
+14.08.2024 23:48:01 | BUTTON | Open Target > S:\sBackupTarget\Test_Target 
+14.08.2024 23:48:02 | BUTTON | Backup > to S:\sBackupTarget\Test_Target 
+14.08.2024 23:48:09 | BUTTON | Backup > to E:\sBackupTarget\Test_Target 
+14.08.2024 23:48:22 | Open Config  >  config.json 
+######################################################
+14.08.2024 23:51:01 | SimpleBackup  >  Start 
+14.08.2024 23:51:03 | Backup > from S:\sBackupSource\Test_Source to E:\sBackupTarget\Test_Target 
+######################################################
+14.08.2024 23:52:08 | SimpleBackup  >  Start 
+14.08.2024 23:52:09 | Backup  
+ > from S:\sBackupSource\Test_Source to E:\sBackupTarget\Test_Target 
+######################################################
+14.08.2024 23:52:30 | SimpleBackup  >  Start 
+14.08.2024 23:52:32 | Backup > from S:\sBackupSource\Test_Source
+ to E:\sBackupTarget\Test_Target 
+14.08.2024 23:53:02 | Open Source > S:\sBackupSource\Test_Source 
+######################################################
+14.08.2024 23:53:37 | SimpleBackup  >  Start 
+14.08.2024 23:53:38 | Backup > 
+from S:\sBackupSource\Test_Source
+to E:\sBackupTarget\Test_Target 
+######################################################
+14.08.2024 23:54:27 | SimpleBackup  >  Start 
+14.08.2024 23:54:28 | Backup > to E:\sBackupTarget\Test_Target 
+14.08.2024 23:54:36 | Backup > to S:\sBackupTarget\Test_Target 
+14.08.2024 23:54:37 | Backup > to E:\sBackupTarget\Test_Target 
+14.08.2024 23:54:39 | Backup > to S:\sBackupTarget\Test_Target 
+######################################################
+14.08.2024 23:56:21 | SimpleBackup  >  Start 
+14.08.2024 23:56:23 | Backup >Test to E:\sBackupTarget\Test_Target 
+14.08.2024 23:56:31 | Backup >Test to S:\sBackupTarget\Test_Target 
+14.08.2024 23:56:32 | Backup >Test to S:\sBackupTarget\Test_Target 
+######################################################
+14.08.2024 23:56:54 | SimpleBackup  >  Start 
+14.08.2024 23:57:01 | Backup | Test > E:\sBackupTarget\Test_Target 
+14.08.2024 23:57:12 | Open Source > S:\sBackupSource\Test_Source 
+######################################################
+14.08.2024 23:57:54 | SimpleBackup  >  Start 
+14.08.2024 23:57:56 | Open Log  |  log.txt 
+14.08.2024 23:58:00 | Open Config  |  config.json 
+14.08.2024 23:58:04 | Open Source | S:\sBackupSource\Test_Source 
+14.08.2024 23:58:12 | Backup | Test > S:\sBackupTarget\Test_Target 
+######################################################
+15.08.2024 00:09:08 | SimpleBackup  >  Start 
+######################################################
+15.08.2024 00:09:15 | SimpleBackup  >  Start 
+######################################################
+15.08.2024 00:10:39 | SimpleBackup  >  Start 
+15.08.2024 00:13:09 | Open Target > E:\sBackupTarget\Test_Target 
+15.08.2024 00:13:11 | Backup | Test > E:\sBackupTarget\Test_Target 
+15.08.2024 00:13:13 | Backup | Test > E:\sBackupTarget\Test_Target 
+######################################################
+15.08.2024 00:14:10 | SimpleBackup  >  Start 
+######################################################
+15.08.2024 00:14:45 | SimpleBackup  >  Start 
+15.08.2024 00:14:47 | Backup | Test > E:\sBackupTarget\Test_Target 
+15.08.2024 00:14:50 | Backup | Test > E:\sBackupTarget\Test_Target 
+15.08.2024 00:14:54 | Backup | Test > E:\sBackupTarget\Test_Target 
+15.08.2024 00:14:55 | Backup | Test > E:\sBackupTarget\Test_Target 
+15.08.2024 00:14:55 | Backup | Test > E:\sBackupTarget\Test_Target 
+15.08.2024 00:14:56 | Backup | Test > E:\sBackupTarget\Test_Target 
+15.08.2024 00:15:00 | Refresh 
+######################################################
+15.08.2024 00:15:00 | SimpleBackup  >  Start 
+15.08.2024 00:15:05 | Backup | Test > E:\sBackupTarget\Test_Target 
+######################################################
+15.08.2024 00:19:11 | SimpleBackup  >  Start 
+######################################################
+15.08.2024 00:19:19 | SimpleBackup  >  Start 
+15.08.2024 00:19:22 | Backup | Test > E:\sBackupTarget\Test_Target 
+15.08.2024 00:19:29 | Backup | Test > E:\sBackupTarget\Test_Target 
+15.08.2024 00:19:31 | Backup | Test > E:\sBackupTarget\Test_Target 
+15.08.2024 00:19:32 | Backup | Test > E:\sBackupTarget\Test_Target 
+15.08.2024 00:20:37 | Backup | Test > S:\sBackupTarget\Test_Target 
+15.08.2024 00:20:38 | Backup | Test > S:\sBackupTarget\Test_Target 
+15.08.2024 00:20:45 | Open Target > E:\sBackupTarget\Test_Target 
+15.08.2024 00:20:46 | Backup | Test > E:\sBackupTarget\Test_Target 
+15.08.2024 00:20:48 | Backup | Test > E:\sBackupTarget\Test_Target 
+15.08.2024 00:20:52 | Open Target > S:\sBackupTarget\Test_Target 
+15.08.2024 00:20:56 | Backup | Test > S:\sBackupTarget\Test_Target 
+15.08.2024 00:20:57 | Backup | Test > S:\sBackupTarget\Test_Target 
+15.08.2024 00:21:04 | Open Target > E:\sBackupTarget\Test_Target 
+######################################################
+15.08.2024 00:21:35 | SimpleBackup  >  Start 
+15.08.2024 00:21:37 | Open Target > E:\sBackupTarget\Test_Target 
+15.08.2024 00:21:38 | Backup | Test > E:\sBackupTarget\Test_Target 
+15.08.2024 00:21:42 | Backup | Test > E:\sBackupTarget\Test_Target 
+15.08.2024 00:21:49 | Backup | Test > E:\sBackupTarget\Test_Target 
+######################################################
+15.08.2024 00:22:08 | SimpleBackup  >  Start 
+15.08.2024 00:22:10 | Open Target > E:\sBackupTarget\Test_Target 
+15.08.2024 00:22:11 | Backup | Test > E:\sBackupTarget\Test_Target 
+15.08.2024 00:22:13 | Backup | Test > E:\sBackupTarget\Test_Target 
+15.08.2024 00:22:15 | Backup | Test > E:\sBackupTarget\Test_Target 
+15.08.2024 00:22:20 | Backup | Test > S:\sBackupTarget\Test_Target 
+15.08.2024 00:22:28 | Backup | Test > E:\sBackupTarget\Test_Target 
+15.08.2024 00:22:30 | Backup | Test > S:\sBackupTarget\Test_Target 
+######################################################
+15.08.2024 00:23:02 | SimpleBackup  >  Start 

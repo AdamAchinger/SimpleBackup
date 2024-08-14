@@ -9,7 +9,7 @@ import shutil
 root = ctk.CTk()
 
 ### Version ###
-toolVersion = 5.3
+toolVersion = 6.3
 
 root.title("Simple Backup"+" v"+str(toolVersion))
 root.iconbitmap('S:\GitHub\SimpleBackup\img\AA_icon.ico')
@@ -57,10 +57,9 @@ def logIt(command):
 
     endlog.set(command)
 
-def backup(source,target,name):
+def backup(source,target,name,v):
     now = datetime.now()
     fd = now.strftime('%d%m%Y')
-    v = 1 
     t = f"{target}\\v{v}_{fd}\\{name}"
     shutil.copytree(source,t)
 
@@ -82,10 +81,10 @@ frameTop.pack(fill=X)
 RefreshButton = ctk.CTkButton(frameTop,text="Refresh",command=lambda:[ logIt("Refresh"), refresh() ],font=("ROBOTO",16),height=32,width=128)
 RefreshButton.pack(side=LEFT,padx=4,pady=4)
 
-ConfigButton = ctk.CTkButton(frameTop,text="Open Config",command=lambda:[ logIt("Open Config"+"  >  "+"config.json"), openConfig() ],font=("ROBOTO",16),height=32,width=128)
+ConfigButton = ctk.CTkButton(frameTop,text="Open Config",command=lambda:[ logIt("Open Config"+"  |  "+"config.json"), openConfig() ],font=("ROBOTO",16),height=32,width=128)
 ConfigButton.pack(side=LEFT,padx=4,pady=4)
 
-LogButton = ctk.CTkButton(frameTop,text="Open Log",command=lambda:[ logIt("Open Log >"+"  >  "+"log.txt"), openLog() ],font=("ROBOTO",16),height=32,width=128)
+LogButton = ctk.CTkButton(frameTop,text="Open Log",command=lambda:[ logIt("Open Log"+"  |  "+"log.txt"), openLog() ],font=("ROBOTO",16),height=32,width=128)
 LogButton.pack(side=LEFT,padx=4,pady=4)
 
 
@@ -134,7 +133,7 @@ for plan_name, pd in data.items():
     SourcePathLable.pack(side=LEFT,padx=2)
 
 
-    OpenSourceButton = ctk.CTkButton(frameBackupSourceBottom,text="Open Source",command=lambda pd=pd :[ logIt(str("BUTTON | Open Source > "+pd["sourceDir"])),openDirectory(pd["sourceDir"])],font=("ROBOTO",16),height=24,width=24)
+    OpenSourceButton = ctk.CTkButton(frameBackupSourceBottom,text="Open Source",command=lambda pd=pd :[ logIt(str("Open Source | "+pd["sourceDir"])),openDirectory(pd["sourceDir"])],font=("ROBOTO",16),height=24,width=24)
     OpenSourceButton.pack(side=RIGHT,padx=4,pady=4)
 
     ### Multi Frame ### 
@@ -146,8 +145,26 @@ for plan_name, pd in data.items():
     for x in range(targetDirCount):
         td1 = pd["targetDir"][ii]["path"]
         pdsd1 = pd["sourceDir"]
-        name = td1.split("\\")[-1]
+        name = pdsd1.split("\\")[-1]
+        pn = plan_name
 
+
+        ### Ready Target ###
+        ExistDir1 = os.path.exists(str(td1))
+        if(ExistDir1 == True):
+            readyColor1 = "green"
+        else:   
+            readyColor1 = "red"
+
+
+        def countFolders(td1):
+            ExistDir12 = os.path.exists(str(td1))
+            if(ExistDir12 == True):
+                #### count folders ####
+                entries = os.listdir(td1)
+                v = str(sum(os.path.isdir(os.path.join(td1, entry)) for entry in entries) +1 )
+            return v 
+        
         ### Frame ###
         frameTarget = ctk.CTkFrame(frameBackupTarget,height=32)
         frameTarget.pack(expand=TRUE,fill=X,padx=2,pady=4)                     
@@ -156,12 +173,6 @@ for plan_name, pd in data.items():
         frameTargetTop = ctk.CTkFrame(frameTarget,height=32)
         frameTargetTop.pack(expand=TRUE,fill=X,padx=2,pady=2)
         
-        ### Ready Target ###
-        ExistDir1 = os.path.exists(str(td1))
-        if(ExistDir1 == True):
-            readyColor1 = "green"
-        else:   
-            readyColor1 = "red"
 
         TargetReadyFrame = ctk.CTkFrame(frameTargetTop,height=12,width=12,fg_color=readyColor1,corner_radius=100)
         TargetReadyFrame.pack(side=LEFT,padx=8) 
@@ -175,19 +186,17 @@ for plan_name, pd in data.items():
         RestoreButton = ctk.CTkButton(frameTargetTop,text="Restore",font=("ROBOTO",16),height=24,width=24)
         RestoreButton.pack(side=RIGHT,padx=4,pady=4)
 
-        BackupButton = ctk.CTkButton(frameTargetTop,text="Backup",command=lambda td1=td1,pdsd1=pdsd1,name=name:[ logIt(str("BUTTON | Backup > to "+td1)),backup(pdsd1,td1,name)],font=("ROBOTO",16),height=24,width=24)
+        BackupButton = ctk.CTkButton(frameTargetTop,text="Backup",command=lambda td1=td1,pdsd1=pdsd1,name=name,pn=pn:[ logIt(str("Backup | "+pn+" > "+td1)),backup(pdsd1,td1,name,countFolders(td1))],font=("ROBOTO",16),height=24,width=24)
         BackupButton.pack(side=RIGHT,padx=4,pady=4)
 
         ### Bottom ### 
         frameTargetBottom = ctk.CTkFrame(frameTarget,height=32)
         frameTargetBottom.pack(expand=TRUE,fill=X,padx=2,pady=2)        
         
-
-        
         TargetLable = ctk.CTkLabel(frameTargetBottom,text=td1,font=("ROBOTO",16))
         TargetLable.pack(side=LEFT,padx=8)
 
-        OpenTargetButton = ctk.CTkButton(frameTargetBottom,text="Open Target",command=lambda td1=td1 :[ logIt(str("BUTTON | Open Target > "+td1)),openDirectory(td1)],font=("ROBOTO",16),height=16,width=24)    
+        OpenTargetButton = ctk.CTkButton(frameTargetBottom,text="Open Target",command=lambda td1=td1 :[ logIt(str("Open Target > "+td1)),openDirectory(td1)],font=("ROBOTO",16),height=16,width=24)    
         OpenTargetButton.pack(side=RIGHT,padx=4,pady=4)
 
         ii += 1 
