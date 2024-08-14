@@ -135,3 +135,84 @@
 13.08.2024 00:46:38 | SimpleBackup  >  Start 
 ######################################################
 13.08.2024 00:53:04 | SimpleBackup  >  Start 
+######################################################
+14.08.2024 21:38:40 | SimpleBackup  >  Start 
+14.08.2024 21:38:41 | Refresh 
+######################################################
+14.08.2024 21:38:42 | SimpleBackup  >  Start 
+14.08.2024 21:38:42 | Open Config  >  config.json 
+######################################################
+14.08.2024 21:41:39 | SimpleBackup  >  Start 
+######################################################
+14.08.2024 21:42:51 | SimpleBackup  >  Start 
+######################################################
+14.08.2024 21:42:55 | SimpleBackup  >  Start 
+######################################################
+14.08.2024 21:43:57 | SimpleBackup  >  Start 
+######################################################
+14.08.2024 21:44:27 | SimpleBackup  >  Start 
+######################################################
+14.08.2024 21:46:04 | SimpleBackup  >  Start 
+######################################################
+14.08.2024 21:46:37 | SimpleBackup  >  Start 
+14.08.2024 21:46:44 | BUTTON | Open Source > S:\sBackupSource\Test 
+14.08.2024 21:46:49 | BUTTON | Open Source > S:\GitHub\SimpleBackup 
+14.08.2024 21:46:54 | BUTTON | Open Source > S:\GitHub\PixelProcesor 
+14.08.2024 21:46:58 | BUTTON | Open Source > P:\MasterAccount 
+14.08.2024 21:46:59 | BUTTON | Open Source > P:\MasterAccount 
+14.08.2024 21:46:59 | BUTTON | Open Source > P:\MasterAccount 
+14.08.2024 21:47:00 | BUTTON | Open Source > P:\MasterAccount 
+######################################################
+14.08.2024 21:50:26 | SimpleBackup  >  Start 
+14.08.2024 21:50:28 | BUTTON | Open Source > S:\sBackupSource\Test 
+14.08.2024 21:50:30 | BUTTON | Open Source > S:\GitHub\SimpleBackup 
+14.08.2024 21:50:34 | BUTTON | Open Target > Z:\Pass\MasterAccounts 
+14.08.2024 21:50:38 | BUTTON | Open Target > Z:\Pass\MasterAccounts 
+14.08.2024 21:50:42 | BUTTON | Open Target > Z:\Pass\MasterAccounts 
+14.08.2024 21:50:45 | BUTTON | Open Target > Z:\Pass\MasterAccounts 
+14.08.2024 21:50:46 | BUTTON | Open Target > Z:\Pass\MasterAccounts 
+14.08.2024 21:50:48 | BUTTON | Open Target > Z:\Pass\MasterAccounts 
+14.08.2024 21:51:10 | BUTTON | Open Target > Z:\Pass\MasterAccounts 
+14.08.2024 21:51:16 | BUTTON | Open Target > Z:\Pass\MasterAccounts 
+14.08.2024 21:51:25 | BUTTON | Open Target > Z:\Pass\MasterAccounts 
+14.08.2024 21:52:28 | BUTTON | Open Target > Z:\Pass\MasterAccounts 
+14.08.2024 21:52:29 | BUTTON | Open Target > Z:\Pass\MasterAccounts 
+14.08.2024 21:53:31 | BUTTON | Open Target > Z:\Pass\MasterAccounts 
+14.08.2024 21:53:33 | BUTTON | Open Target > Z:\Pass\MasterAccounts 
+14.08.2024 21:53:35 | BUTTON | Open Target > Z:\Pass\MasterAccounts 
+14.08.2024 21:53:36 | BUTTON | Open Target > Z:\Pass\MasterAccounts 
+######################################################
+14.08.2024 21:54:17 | SimpleBackup  >  Start 
+######################################################
+14.08.2024 21:54:25 | SimpleBackup  >  Start 
+######################################################
+14.08.2024 21:54:36 | SimpleBackup  >  Start 
+14.08.2024 21:54:38 | BUTTON | Open Target > E:\sBackupTarget\Test 
+14.08.2024 21:54:41 | BUTTON | Open Target > S:\sBackupTarget\Test 
+14.08.2024 21:54:43 | BUTTON | Open Source > S:\GitHub\SimpleBackup 
+14.08.2024 21:54:46 | BUTTON | Open Target > E:\sBackupTarget\Test 
+14.08.2024 21:54:46 | BUTTON | Open Target > E:\sBackupTarget\Test 
+14.08.2024 21:54:46 | BUTTON | Open Target > E:\sBackupTarget\Test 
+14.08.2024 21:54:47 | BUTTON | Open Target > E:\sBackupTarget\Test 
+######################################################
+14.08.2024 21:55:04 | SimpleBackup  >  Start 
+14.08.2024 21:55:06 | BUTTON | Open Source > S:\sBackupSource\Test 
+14.08.2024 21:55:07 | BUTTON | Open Target > E:\sBackupTarget\Test 
+14.08.2024 21:55:11 | BUTTON | Open Target > S:\sBackupTarget\Test 
+14.08.2024 21:55:12 | BUTTON | Open Target > E:\sBackupTarget\Test 
+14.08.2024 21:55:14 | BUTTON | Open Target > S:\sBackupTarget\Test 
+14.08.2024 21:55:17 | BUTTON | Open Source > S:\GitHub\SimpleBackup 
+######################################################
+14.08.2024 21:55:34 | SimpleBackup  >  Start 
+######################################################
+14.08.2024 21:57:02 | SimpleBackup  >  Start 
+######################################################
+14.08.2024 22:14:04 | SimpleBackup  >  Start 
+14.08.2024 22:14:06 | BUTTON | Open Source > S:\sBackupSource\Test 
+14.08.2024 22:14:13 | Open Config  >  config.json 
+14.08.2024 22:14:16 | Open Log >  >  log.txt 
+14.08.2024 22:14:20 | BUTTON | Open Source > S:\sBackupSource\Test 
+14.08.2024 22:14:23 | BUTTON | Open Target > E:\sBackupTarget\Test 
+14.08.2024 22:14:25 | BUTTON | Open Target > S:\sBackupTarget\Test 
+14.08.2024 22:14:28 | BUTTON | Open Source > S:\GitHub\SimpleBackup 
+14.08.2024 22:14:31 | BUTTON | Open Source > S:\GitHub\PixelProcesor 

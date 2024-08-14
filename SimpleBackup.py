@@ -8,7 +8,7 @@ import sys
 root = ctk.CTk()
 
 ### Version ###
-toolVersion = 4.3
+toolVersion = 5.3
 
 root.title("Simple Backup"+" v"+str(toolVersion))
 root.iconbitmap('S:\GitHub\SimpleBackup\img\AA_icon.ico')
@@ -91,7 +91,7 @@ frameMiddle.pack(expand=TRUE,fill=BOTH,pady=4)
 with open("config.json","r") as config: 
     data = json.loads(config.read())
 
-backupsCount = len(data)
+
 for plan_name, pd in data.items():
 
     targetDirCount = len(pd["targetDir"])
@@ -112,8 +112,6 @@ for plan_name, pd in data.items():
     SourceNameLable = ctk.CTkLabel(frameBackupSourceTop,text=plan_name,font=("ROBOTO",32))
     SourceNameLable.pack(padx=16,pady=4)
 
-    ### Bottom ### 
-    pd = pd
     ### Ready Target ###
     ExistDir = os.path.exists(pd["sourceDir"])
     if(ExistDir == True):
@@ -157,8 +155,6 @@ for plan_name, pd in data.items():
         TargetReadyFrame = ctk.CTkFrame(frameTargetTop,height=12,width=12,fg_color=readyColor1,corner_radius=100)
         TargetReadyFrame.pack(side=LEFT,padx=8) 
 
-
-
         TargetNameLable = ctk.CTkLabel(frameTargetTop,text=pd["targetDir"][ii]["name"],font=("ROBOTO",16))
         TargetNameLable.pack(side=LEFT,padx=2) 
 
@@ -175,12 +171,12 @@ for plan_name, pd in data.items():
         frameTargetBottom = ctk.CTkFrame(frameTarget,height=32)
         frameTargetBottom.pack(expand=TRUE,fill=X,padx=2,pady=2)        
         
-        targetDir1 = pd["targetDir"][ii]["path"]
+        td1 = pd["targetDir"][ii]["path"]
         
-        TargetLable = ctk.CTkLabel(frameTargetBottom,text=targetDir1,font=("ROBOTO",16))
+        TargetLable = ctk.CTkLabel(frameTargetBottom,text=td1,font=("ROBOTO",16))
         TargetLable.pack(side=LEFT,padx=8)
 
-        OpenTargetButton = ctk.CTkButton(frameTargetBottom,text="Open Target",font=("ROBOTO",16),height=16,width=24)    
+        OpenTargetButton = ctk.CTkButton(frameTargetBottom,text="Open Target",command=lambda td1=td1 :[ logIt(str("BUTTON | Open Target > "+td1)),openDirectory(td1)],font=("ROBOTO",16),height=16,width=24)    
         OpenTargetButton.pack(side=RIGHT,padx=4,pady=4)
 
         ii += 1 
