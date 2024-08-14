@@ -12,7 +12,7 @@ root = ctk.CTk()
 toolVersion = 6.3
 
 root.title("Simple Backup"+" v"+str(toolVersion))
-root.iconbitmap('S:\GitHub\SimpleBackup\img\AA_icon.ico')
+root.iconbitmap('img\AA_icon.ico')
 #root.resizable(False,False)
 
 #####
@@ -30,6 +30,7 @@ root.geometry(f'{appWidth}x{appHeight}+{appXpos}+{appYpos}')
 ##### 
 
 fSize = 11
+offColor = "#223543" 
 ### Functions ###
 def refresh():
     python = sys.executable
@@ -132,9 +133,13 @@ for plan_name, pd in data.items():
     SourcePathLable = ctk.CTkLabel(frameBackupSourceBottom,text=pd["sourceDir"],font=("ROBOTO",16))
     SourcePathLable.pack(side=LEFT,padx=2)
 
+    if(ExistDir == True):
+        OpenSourceButton = ctk.CTkButton(frameBackupSourceBottom,text="Open Source",command=lambda pd=pd :[ logIt(str("Open Source | "+pd["sourceDir"])),openDirectory(pd["sourceDir"])],font=("ROBOTO",16),height=24,width=24)
+        OpenSourceButton.pack(side=RIGHT,padx=4,pady=4)
+    else:   
+        OpenSourceButton = ctk.CTkButton(frameBackupSourceBottom,text="Open Source",font=("ROBOTO",16),fg_color=offColor,hover_color=offColor,height=24,width=24)
+        OpenSourceButton.pack(side=RIGHT,padx=4,pady=4)
 
-    OpenSourceButton = ctk.CTkButton(frameBackupSourceBottom,text="Open Source",command=lambda pd=pd :[ logIt(str("Open Source | "+pd["sourceDir"])),openDirectory(pd["sourceDir"])],font=("ROBOTO",16),height=24,width=24)
-    OpenSourceButton.pack(side=RIGHT,padx=4,pady=4)
 
     ### Multi Frame ### 
     frameBackupTarget = ctk.CTkFrame(frameBackup,height=64)
@@ -157,6 +162,7 @@ for plan_name, pd in data.items():
             readyColor1 = "red"
 
 
+            
         def countFolders(td1):
             ExistDir12 = os.path.exists(str(td1))
             if(ExistDir12 == True):
@@ -164,6 +170,38 @@ for plan_name, pd in data.items():
                 entries = os.listdir(td1)
                 v = str(sum(os.path.isdir(os.path.join(td1, entry)) for entry in entries) +1 )
             return v 
+            
+        def restore():
+            pass
+        
+        def openRestoreWindow(root,log):
+            root = ctk.CTkToplevel(root)
+            root.attributes("-topmost", True)
+            root.title("Restore"+" v"+str(toolVersion))
+            root.iconbitmap('img\AA_icon.ico')
+            # application dimensions
+            appWidth = 256
+            appHeight = 128
+            # get windows screan width and height
+            screenWidth = root.winfo_screenwidth()
+            screenHeight = root.winfo_screenheight()
+            # center position 
+            appXpos = int((screenWidth/2)-(appWidth/2))
+            appYpos = int((screenHeight/2)-(appHeight/2))
+            # create app window 
+            root.geometry(f'{appWidth}x{appHeight}+{appXpos}+{appYpos}')
+            ##### 
+
+            frameTop = ctk.CTkFrame(root,width=appWidth,height=appHeight/2)
+            frameTop.pack()
+
+            frameBottom = ctk.CTkFrame(root,width=appWidth,height=appHeight/2)
+            frameBottom.pack(expand=TRUE,fill=BOTH,side=BOTTOM)
+
+            RestoreButton1 = ctk.CTkButton(frameBottom,text="Restore",command=lambda:[ logIt(log), restore() ],font=("ROBOTO",16),height=32,width=128)
+            RestoreButton1.pack(side=RIGHT,padx=16)
+
+            
         
         ### Frame ###
         frameTarget = ctk.CTkFrame(frameBackupTarget,height=32)
@@ -182,13 +220,6 @@ for plan_name, pd in data.items():
 
         TargetUpdateDateLable = ctk.CTkLabel(frameTargetTop,text="03.08.2024",font=("ROBOTO",16))
         TargetUpdateDateLable.pack(side=LEFT,padx=8) 
-
-        RestoreButton = ctk.CTkButton(frameTargetTop,text="Restore",font=("ROBOTO",16),height=24,width=24)
-        RestoreButton.pack(side=RIGHT,padx=4,pady=4)
-
-        BackupButton = ctk.CTkButton(frameTargetTop,text="Backup",command=lambda td1=td1,pdsd1=pdsd1,name=name,pn=pn:[ logIt(str("Backup | "+pn+" > "+td1)),backup(pdsd1,td1,name,countFolders(td1))],font=("ROBOTO",16),height=24,width=24)
-        BackupButton.pack(side=RIGHT,padx=4,pady=4)
-
         ### Bottom ### 
         frameTargetBottom = ctk.CTkFrame(frameTarget,height=32)
         frameTargetBottom.pack(expand=TRUE,fill=X,padx=2,pady=2)        
@@ -196,8 +227,27 @@ for plan_name, pd in data.items():
         TargetLable = ctk.CTkLabel(frameTargetBottom,text=td1,font=("ROBOTO",16))
         TargetLable.pack(side=LEFT,padx=8)
 
-        OpenTargetButton = ctk.CTkButton(frameTargetBottom,text="Open Target",command=lambda td1=td1 :[ logIt(str("Open Target > "+td1)),openDirectory(td1)],font=("ROBOTO",16),height=16,width=24)    
-        OpenTargetButton.pack(side=RIGHT,padx=4,pady=4)
+        if(ExistDir1 == True and ExistDir == True ):
+            RestoreButton = ctk.CTkButton(frameTargetTop,text="Restore",command=lambda td1=td1,pdsd1=pdsd1,name=name,pn=pn:[ logIt("Open Restore Window"),openRestoreWindow(root,str("Restore | " + td1))],font=("ROBOTO",16),height=24,width=24)
+            RestoreButton.pack(side=RIGHT,padx=4,pady=4)
+
+            BackupButton = ctk.CTkButton(frameTargetTop,text="Backup",command=lambda td1=td1,pdsd1=pdsd1,name=name,pn=pn:[ logIt(str("Backup | "+pn+" > "+td1)),backup(pdsd1,td1,name,countFolders(td1))],font=("ROBOTO",16),height=24,width=24)
+            BackupButton.pack(side=RIGHT,padx=4,pady=4)
+        else:   
+            RestoreButton = ctk.CTkButton(frameTargetTop,text="Restore",font=("ROBOTO",16),fg_color=offColor,hover_color=offColor,height=24,width=24)
+            RestoreButton.pack(side=RIGHT,padx=4,pady=4)
+
+            BackupButton = ctk.CTkButton(frameTargetTop,text="Backup",font=("ROBOTO",16),fg_color=offColor,hover_color=offColor,height=24,width=24)
+            BackupButton.pack(side=RIGHT,padx=4,pady=4)
+
+        if(ExistDir1 == True):
+            OpenTargetButton = ctk.CTkButton(frameTargetBottom,text="Open Target",command=lambda td1=td1 :[ logIt(str("Open Target > "+td1)),openDirectory(td1)],font=("ROBOTO",16),height=16,width=24)    
+            OpenTargetButton.pack(side=RIGHT,padx=4,pady=4)
+        else:
+            OpenTargetButton = ctk.CTkButton(frameTargetBottom,text="Open Target",fg_color=offColor,hover_color=offColor,font=("ROBOTO",16),height=16,width=24)    
+            OpenTargetButton.pack(side=RIGHT,padx=4,pady=4)
+
+
 
         ii += 1 
 
