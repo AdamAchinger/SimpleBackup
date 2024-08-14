@@ -1,14 +1,14 @@
 {
     "Test": {
-      "sourceDir": "S:\\sBackupSource\\Test",
+      "sourceDir": "S:\\sBackupSource\\Test_Source",
       "targetDir": [
         {
           "name": "Test E",
-          "path": "E:\\sBackupTarget\\Test"
+          "path": "E:\\sBackupTarget\\Test_Target"
         },
         {
           "name": "Test S",
-          "path": "S:\\sBackupTarget\\Test"
+          "path": "S:\\sBackupTarget\\Test_Target"
         }
       ]
     },

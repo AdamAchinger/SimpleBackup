@@ -4,6 +4,7 @@ from datetime import datetime
 import json
 import os
 import sys
+import shutil
 
 root = ctk.CTk()
 
@@ -55,6 +56,13 @@ def logIt(command):
     logFile.close()
 
     endlog.set(command)
+
+def backup(source,target,name):
+    now = datetime.now()
+    fd = now.strftime('%d%m%Y')
+    v = 1 
+    t = f"{target}\\v{v}_{fd}\\{name}"
+    shutil.copytree(source,t)
 
 
 ### Start Log ###
@@ -136,6 +144,9 @@ for plan_name, pd in data.items():
 
     ii = 0
     for x in range(targetDirCount):
+        td1 = pd["targetDir"][ii]["path"]
+        pdsd1 = pd["sourceDir"]
+        name = td1.split("\\")[-1]
 
         ### Frame ###
         frameTarget = ctk.CTkFrame(frameBackupTarget,height=32)
@@ -146,7 +157,7 @@ for plan_name, pd in data.items():
         frameTargetTop.pack(expand=TRUE,fill=X,padx=2,pady=2)
         
         ### Ready Target ###
-        ExistDir1 = os.path.exists(str(pd["targetDir"][ii]["path"]))
+        ExistDir1 = os.path.exists(str(td1))
         if(ExistDir1 == True):
             readyColor1 = "green"
         else:   
@@ -164,14 +175,14 @@ for plan_name, pd in data.items():
         RestoreButton = ctk.CTkButton(frameTargetTop,text="Restore",font=("ROBOTO",16),height=24,width=24)
         RestoreButton.pack(side=RIGHT,padx=4,pady=4)
 
-        BackupButton = ctk.CTkButton(frameTargetTop,text="Backup",font=("ROBOTO",16),height=24,width=24)
+        BackupButton = ctk.CTkButton(frameTargetTop,text="Backup",command=lambda td1=td1,pdsd1=pdsd1,name=name:[ logIt(str("BUTTON | Backup > to "+td1)),backup(pdsd1,td1,name)],font=("ROBOTO",16),height=24,width=24)
         BackupButton.pack(side=RIGHT,padx=4,pady=4)
 
         ### Bottom ### 
         frameTargetBottom = ctk.CTkFrame(frameTarget,height=32)
         frameTargetBottom.pack(expand=TRUE,fill=X,padx=2,pady=2)        
         
-        td1 = pd["targetDir"][ii]["path"]
+
         
         TargetLable = ctk.CTkLabel(frameTargetBottom,text=td1,font=("ROBOTO",16))
         TargetLable.pack(side=LEFT,padx=8)
