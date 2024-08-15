@@ -1,12 +1,13 @@
 import os 
 
-def count_folders(path):
-    entries = os.listdir(path)
-    folder_count = sum(os.path.isdir(os.path.join(path, entry)) for entry in entries)
-    return folder_count
+td1 = "S:\\sBackupTarget\\Test_Target"
+entries = os.listdir(td1)
 
-# Example usage
-y = f"e:\sBackupTarget\Test_Target"
+# List to hold directory names
+directories = [entry for entry in entries if os.path.isdir(os.path.join(td1, entry))]
 
-print("Number of folders:", count_folders(y))
-sasas
+# Print the number of directories
+print(len(directories))
+
+# Print the list of directories
+print(directories)

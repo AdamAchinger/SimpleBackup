@@ -149,10 +149,11 @@ for plan_name, pd in data.items():
     ii = 0
     for x in range(targetDirCount):
         td1 = pd["targetDir"][ii]["path"]
+        td2 = pd["targetDir"][ii]["name"]
         pdsd1 = pd["sourceDir"]
         name = pdsd1.split("\\")[-1]
         pn = plan_name
-
+        vname = [""]
 
         ### Ready Target ###
         ExistDir1 = os.path.exists(str(td1))
@@ -170,11 +171,18 @@ for plan_name, pd in data.items():
                 entries = os.listdir(td1)
                 v = str(sum(os.path.isdir(os.path.join(td1, entry)) for entry in entries) +1 )
             return v 
+        
+        def countFoldersList(td1):
+            ExistDir12 = os.path.exists(str(td1))
+            if(ExistDir12 == True):
+                entries = os.listdir(td1)
+                vname = [entry for entry in entries if os.path.isdir(os.path.join(td1, entry))]
+            return vname
             
         def restore():
             pass
         
-        def openRestoreWindow(root,log):
+        def openRestoreWindow(root,log,name1,vname):
             root = ctk.CTkToplevel(root)
             root.attributes("-topmost", True)
             root.title("Restore"+" v"+str(toolVersion))
@@ -192,15 +200,23 @@ for plan_name, pd in data.items():
             root.geometry(f'{appWidth}x{appHeight}+{appXpos}+{appYpos}')
             ##### 
 
+
             frameTop = ctk.CTkFrame(root,width=appWidth,height=appHeight/2)
-            frameTop.pack()
+            frameTop.pack(expand=TRUE,fill=BOTH)
+
+            TargetRestoreLable = ctk.CTkLabel(frameTop,text=name1,font=("ROBOTO",16))
+            TargetRestoreLable.pack(side=LEFT,padx=8) 
+
+            combobox = ctk.CTkComboBox(frameTop,values=vname)
+            combobox.pack(side=LEFT)
+            combobox.set(vname[-1])
+
 
             frameBottom = ctk.CTkFrame(root,width=appWidth,height=appHeight/2)
             frameBottom.pack(expand=TRUE,fill=BOTH,side=BOTTOM)
 
             RestoreButton1 = ctk.CTkButton(frameBottom,text="Restore",command=lambda:[ logIt(log), restore() ],font=("ROBOTO",16),height=32,width=128)
             RestoreButton1.pack(side=RIGHT,padx=16)
-
             
         
         ### Frame ###
@@ -227,8 +243,9 @@ for plan_name, pd in data.items():
         TargetLable = ctk.CTkLabel(frameTargetBottom,text=td1,font=("ROBOTO",16))
         TargetLable.pack(side=LEFT,padx=8)
 
+
         if(ExistDir1 == True and ExistDir == True ):
-            RestoreButton = ctk.CTkButton(frameTargetTop,text="Restore",command=lambda td1=td1,pdsd1=pdsd1,name=name,pn=pn:[ logIt("Open Restore Window"),openRestoreWindow(root,str("Restore | " + td1))],font=("ROBOTO",16),height=24,width=24)
+            RestoreButton = ctk.CTkButton(frameTargetTop,text="Restore",command=lambda td1=td1,pdsd1=pdsd1,name=name,pn=pn,td2=td2,vname=vname:[ logIt("Open Restore Window"),openRestoreWindow(root,str("Restore | " + td1),td2,countFoldersList(td1))],font=("ROBOTO",16),height=24,width=24)
             RestoreButton.pack(side=RIGHT,padx=4,pady=4)
 
             BackupButton = ctk.CTkButton(frameTargetTop,text="Backup",command=lambda td1=td1,pdsd1=pdsd1,name=name,pn=pn:[ logIt(str("Backup | "+pn+" > "+td1)),backup(pdsd1,td1,name,countFolders(td1))],font=("ROBOTO",16),height=24,width=24)

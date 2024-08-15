@@ -759,3 +759,83 @@ to E:\sBackupTarget\Test_Target
 ######################################################
 15.08.2024 01:31:49 | SimpleBackup  >  Start 
 15.08.2024 01:32:03 | Open Restore Window 
+######################################################
+15.08.2024 01:39:03 | SimpleBackup  >  Start 
+15.08.2024 01:39:11 | Open Restore Window 
+######################################################
+15.08.2024 01:43:59 | SimpleBackup  >  Start 
+15.08.2024 01:44:28 | Open Restore Window 
+15.08.2024 01:44:37 | Open Restore Window 
+15.08.2024 01:44:40 | Open Restore Window 
+######################################################
+15.08.2024 01:45:12 | SimpleBackup  >  Start 
+15.08.2024 01:45:14 | Open Restore Window 
+15.08.2024 01:45:21 | Open Restore Window 
+15.08.2024 01:45:36 | Open Restore Window 
+######################################################
+15.08.2024 01:49:52 | SimpleBackup  >  Start 
+15.08.2024 01:49:54 | Open Restore Window 
+######################################################
+15.08.2024 01:50:42 | SimpleBackup  >  Start 
+######################################################
+15.08.2024 01:50:44 | SimpleBackup  >  Start 
+######################################################
+15.08.2024 01:50:46 | SimpleBackup  >  Start 
+15.08.2024 01:50:48 | Open Restore Window 
+######################################################
+15.08.2024 01:51:05 | SimpleBackup  >  Start 
+15.08.2024 01:51:07 | Open Restore Window 
+######################################################
+15.08.2024 01:55:42 | SimpleBackup  >  Start 
+######################################################
+15.08.2024 01:56:06 | SimpleBackup  >  Start 
+15.08.2024 01:56:18 | Open Restore Window 
+15.08.2024 01:56:22 | Backup | Test > E:\sBackupTarget\Test_Target 
+######################################################
+15.08.2024 02:01:45 | SimpleBackup  >  Start 
+15.08.2024 02:01:48 | Open Restore Window 
+######################################################
+15.08.2024 02:04:36 | SimpleBackup  >  Start 
+15.08.2024 02:04:38 | Open Restore Window 
+######################################################
+15.08.2024 02:05:09 | SimpleBackup  >  Start 
+15.08.2024 02:05:19 | Backup | Test > S:\sBackupTarget\Test_Target 
+15.08.2024 02:05:21 | Backup | Test > S:\sBackupTarget\Test_Target 
+15.08.2024 02:05:23 | Backup | Test > S:\sBackupTarget\Test_Target 
+15.08.2024 02:05:24 | Backup | Test > S:\sBackupTarget\Test_Target 
+15.08.2024 02:05:24 | Backup | Test > S:\sBackupTarget\Test_Target 
+15.08.2024 02:05:24 | Backup | Test > S:\sBackupTarget\Test_Target 
+######################################################
+15.08.2024 02:05:56 | SimpleBackup  >  Start 
+15.08.2024 02:06:02 | Backup | Test > E:\sBackupTarget\Test_Target 
+15.08.2024 02:06:05 | Backup | Test > S:\sBackupTarget\Test_Target 
+15.08.2024 02:06:06 | Backup | Test > S:\sBackupTarget\Test_Target 
+15.08.2024 02:06:13 | Open Restore Window 
+######################################################
+15.08.2024 02:38:24 | SimpleBackup  >  Start 
+15.08.2024 02:38:31 | Backup | Test > E:\sBackupTarget\Test_Target 
+15.08.2024 02:38:34 | Backup | Test > E:\sBackupTarget\Test_Target 
+15.08.2024 02:38:41 | Open Target > E:\sBackupTarget\Test_Target 
+######################################################
+15.08.2024 02:39:53 | SimpleBackup  >  Start 
+15.08.2024 02:39:55 | Backup | Test > E:\sBackupTarget\Test_Target 
+######################################################
+15.08.2024 02:43:49 | SimpleBackup  >  Start 
+15.08.2024 02:43:51 | Backup | Test > E:\sBackupTarget\Test_Target 
+15.08.2024 02:43:56 | Backup | Test > E:\sBackupTarget\Test_Target 
+15.08.2024 02:44:00 | Backup | Test > E:\sBackupTarget\Test_Target 
+15.08.2024 02:44:01 | Backup | Test > E:\sBackupTarget\Test_Target 
+15.08.2024 02:44:01 | Backup | Test > E:\sBackupTarget\Test_Target 
+15.08.2024 02:44:01 | Backup | Test > E:\sBackupTarget\Test_Target 
+######################################################
+15.08.2024 02:44:45 | SimpleBackup  >  Start 
+15.08.2024 02:44:49 | Open Target > E:\sBackupTarget\Test_Target 
+15.08.2024 02:44:51 | Backup | Test > E:\sBackupTarget\Test_Target 
+15.08.2024 02:44:54 | Backup | Test > E:\sBackupTarget\Test_Target 
+######################################################
+15.08.2024 02:47:42 | SimpleBackup  >  Start 
+15.08.2024 02:47:46 | Backup | Test > E:\sBackupTarget\Test_Target 
+15.08.2024 02:47:49 | Open Restore Window 
+######################################################
+15.08.2024 02:48:21 | SimpleBackup  >  Start 
+15.08.2024 02:48:23 | Open Restore Window 
