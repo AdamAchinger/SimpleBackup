@@ -58,12 +58,6 @@ def logIt(command):
 
     endlog.set(command)
 
-def backup(source,target,name,v):
-    now = datetime.now()
-    fd = now.strftime('%d%m%Y')
-    t = f"{target}\\v{v}_{fd}\\{name}"
-    shutil.copytree(source,t)
-
 
 ### Start Log ###
 with open("log.txt","a") as logFile:
@@ -161,8 +155,6 @@ for plan_name, pd in data.items():
             readyColor1 = "green"
         else:   
             readyColor1 = "red"
-
-
             
         def countFolders(td1):
             ExistDir12 = os.path.exists(str(td1))
@@ -178,9 +170,21 @@ for plan_name, pd in data.items():
                 entries = os.listdir(td1)
                 vname = [entry for entry in entries if os.path.isdir(os.path.join(td1, entry))]
             return vname
+        
+        def backup(source,target,name,v):
+            now = datetime.now()
+            fd = now.strftime('%d%m%Y')
+            t = f"{target}\\v{v}_{fd}\\{name}"
+            shutil.copytree(source,t)
+
+
             
-        def restore():
-            pass
+        def restore(source,target,vname):
+            t = f"{target}\\{vname}"
+            print(t)
+            print(source)
+            print(vname)
+            
         
         def openRestoreWindow(root,log,name1,vname):
             root = ctk.CTkToplevel(root)
@@ -222,7 +226,13 @@ for plan_name, pd in data.items():
             dropmenu.pack(side=LEFT,padx=8)
             dropmenu.set(vname[-1])
 
-            RestoreButton1 = ctk.CTkButton(frameBottom,text="Restore",command=lambda:[ logIt(log), restore() ],font=("ROBOTO",16),height=32,width=128)
+            RestoreButton1 = ctk.CTkButton(frameBottom,
+                                           text="Restore",
+                                           command=lambda td1=td1,pdsd1=pdsd1:[
+                                               logIt(str("Backup | "+pn+" > "+td1)),
+                                               restore(pdsd1,td1,dropmenu.get())],
+                                               font=("ROBOTO",16),
+                                               height=32,width=128)
             RestoreButton1.pack(side=RIGHT,padx=8)
             
         

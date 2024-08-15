@@ -143,3 +143,40 @@
 16.08.2024 01:26:12 | Restore | E:\sBackupTarget\Test_Target 
 16.08.2024 01:26:17 | Restore | E:\sBackupTarget\Test_Target 
 16.08.2024 01:26:17 | Restore | E:\sBackupTarget\Test_Target 
+######################################################
+16.08.2024 01:39:07 | SimpleBackup  >  Start 
+16.08.2024 01:39:12 | Backup | Test > E:\sBackupTarget\Test_Target 
+16.08.2024 01:39:13 | Open Target > E:\sBackupTarget\Test_Target 
+16.08.2024 01:39:17 | Backup | Test > E:\sBackupTarget\Test_Target 
+######################################################
+16.08.2024 01:48:39 | SimpleBackup  >  Start 
+16.08.2024 01:48:41 | Open Restore Window 
+######################################################
+16.08.2024 01:49:01 | SimpleBackup  >  Start 
+16.08.2024 01:49:03 | Open Restore Window 
+16.08.2024 01:49:05 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+16.08.2024 01:49:20 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+16.08.2024 01:49:23 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+16.08.2024 01:49:26 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+######################################################
+16.08.2024 01:49:56 | SimpleBackup  >  Start 
+16.08.2024 01:49:58 | Open Restore Window 
+16.08.2024 01:50:00 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+16.08.2024 01:50:02 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+16.08.2024 01:50:03 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+16.08.2024 01:50:03 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+16.08.2024 01:50:03 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+16.08.2024 01:50:03 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+16.08.2024 01:50:04 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+16.08.2024 01:50:04 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+16.08.2024 01:50:05 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+16.08.2024 01:50:06 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+16.08.2024 01:50:07 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+16.08.2024 01:50:07 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+######################################################
+16.08.2024 01:54:29 | SimpleBackup  >  Start 
+16.08.2024 01:54:38 | Open Restore Window 
+16.08.2024 01:54:40 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+16.08.2024 01:54:41 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+16.08.2024 01:54:41 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+16.08.2024 01:56:40 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
