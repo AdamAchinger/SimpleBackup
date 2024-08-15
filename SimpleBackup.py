@@ -188,7 +188,7 @@ for plan_name, pd in data.items():
             root.title("Restore"+" v"+str(toolVersion))
             root.iconbitmap('img\AA_icon.ico')
             # application dimensions
-            appWidth = 256
+            appWidth = 280
             appHeight = 128
             # get windows screan width and height
             screenWidth = root.winfo_screenwidth()
@@ -198,25 +198,32 @@ for plan_name, pd in data.items():
             appYpos = int((screenHeight/2)-(appHeight/2))
             # create app window 
             root.geometry(f'{appWidth}x{appHeight}+{appXpos}+{appYpos}')
+            root.resizable(False,False)
             ##### 
 
 
             frameTop = ctk.CTkFrame(root,width=appWidth,height=appHeight/2)
             frameTop.pack(expand=TRUE,fill=BOTH)
 
-            TargetRestoreLable = ctk.CTkLabel(frameTop,text=name1,font=("ROBOTO",16))
-            TargetRestoreLable.pack(side=LEFT,padx=8) 
+            TargetRestoreLable = ctk.CTkLabel(frameTop,text=name1,font=("ROBOTO",24))
+            TargetRestoreLable.pack(pady=8,padx=8) 
 
-            combobox = ctk.CTkComboBox(frameTop,values=vname)
-            combobox.pack(side=LEFT)
-            combobox.set(vname[-1])
-
+            WarningLable = ctk.CTkLabel(frameTop,text="It will overwrites source files.",font=("ROBOTO",16))
+            WarningLable.pack(pady=4,padx=8) 
+            
 
             frameBottom = ctk.CTkFrame(root,width=appWidth,height=appHeight/2)
             frameBottom.pack(expand=TRUE,fill=BOTH,side=BOTTOM)
 
+            dropmenu = ctk.CTkOptionMenu(frameBottom,
+                                         values=vname,
+                                         font=("ROBOTO",16),
+                                         height=32,width=128)
+            dropmenu.pack(side=LEFT,padx=8)
+            dropmenu.set(vname[-1])
+
             RestoreButton1 = ctk.CTkButton(frameBottom,text="Restore",command=lambda:[ logIt(log), restore() ],font=("ROBOTO",16),height=32,width=128)
-            RestoreButton1.pack(side=RIGHT,padx=16)
+            RestoreButton1.pack(side=RIGHT,padx=8)
             
         
         ### Frame ###
