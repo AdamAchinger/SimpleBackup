@@ -180,3 +180,69 @@
 16.08.2024 01:54:41 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
 16.08.2024 01:54:41 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
 16.08.2024 01:56:40 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+######################################################
+22.08.2024 00:13:04 | SimpleBackup  >  Start 
+22.08.2024 00:13:08 | Open Restore Window 
+######################################################
+22.08.2024 00:13:17 | SimpleBackup  >  Start 
+######################################################
+25.08.2024 18:11:48 | SimpleBackup  >  Start 
+25.08.2024 18:13:36 | Open Restore Window 
+25.08.2024 18:13:45 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+25.08.2024 18:13:46 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+25.08.2024 18:13:47 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+25.08.2024 18:13:47 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+25.08.2024 18:13:47 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+######################################################
+25.08.2024 18:15:37 | SimpleBackup  >  Start 
+25.08.2024 18:15:39 | Open Restore Window 
+25.08.2024 18:15:44 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+25.08.2024 18:15:45 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+25.08.2024 18:15:45 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+25.08.2024 18:15:45 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+25.08.2024 18:15:46 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+25.08.2024 18:15:46 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+25.08.2024 18:15:47 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+25.08.2024 18:15:47 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+25.08.2024 18:15:48 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+25.08.2024 18:15:48 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+25.08.2024 18:15:50 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+25.08.2024 18:15:50 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+25.08.2024 18:15:51 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+25.08.2024 18:15:53 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+25.08.2024 18:15:54 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+25.08.2024 18:15:54 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+25.08.2024 18:15:56 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+25.08.2024 18:15:57 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+25.08.2024 18:15:57 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+25.08.2024 18:15:58 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+25.08.2024 18:15:59 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+25.08.2024 18:15:59 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+######################################################
+25.08.2024 18:17:31 | SimpleBackup  >  Start 
+######################################################
+25.08.2024 18:27:17 | SimpleBackup  >  Start 
+25.08.2024 18:27:19 | Open Restore Window 
+25.08.2024 18:27:21 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+25.08.2024 18:27:23 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+25.08.2024 18:27:23 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+######################################################
+25.08.2024 18:28:00 | SimpleBackup  >  Start 
+25.08.2024 18:28:03 | Open Restore Window 
+25.08.2024 18:28:04 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+25.08.2024 18:28:09 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+25.08.2024 18:28:09 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+25.08.2024 18:28:10 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+25.08.2024 18:28:10 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+25.08.2024 18:28:11 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+25.08.2024 18:28:32 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+25.08.2024 18:28:33 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+25.08.2024 18:28:33 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+25.08.2024 18:28:33 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+25.08.2024 18:28:34 | Backup | MasterAccount > Z:\Pass\MasterAccounts 
+25.08.2024 18:28:47 | Open Restore Window 
+25.08.2024 18:28:47 | Open Restore Window 
+25.08.2024 18:28:50 | Open Restore Window 
+25.08.2024 18:28:53 | Open Restore Window 
+25.08.2024 18:28:56 | Open Restore Window 
+25.08.2024 18:29:15 | Open Restore Window 

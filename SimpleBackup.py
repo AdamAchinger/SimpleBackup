@@ -177,11 +177,12 @@ for plan_name, pd in data.items():
             t = f"{target}\\v{v}_{fd}\\{name}"
             shutil.copytree(source,t)
 
-
-            
         def restore(source,target,vname):
             t = f"{target}\\{vname}"
-            print(t)
+
+            #shutil.copytree(source,t)
+
+            print(target)
             print(source)
             print(vname)
             
@@ -230,7 +231,7 @@ for plan_name, pd in data.items():
                                            text="Restore",
                                            command=lambda td1=td1,pdsd1=pdsd1:[
                                                logIt(str("Backup | "+pn+" > "+td1)),
-                                               restore(pdsd1,td1,dropmenu.get())],
+                                               restore(td1,pdsd1,dropmenu.get())],
                                                font=("ROBOTO",16),
                                                height=32,width=128)
             RestoreButton1.pack(side=RIGHT,padx=8)
